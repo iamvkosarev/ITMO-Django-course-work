@@ -50,13 +50,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'course_work.urls'
-
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR, STATICFILES_DIRS[0]],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
