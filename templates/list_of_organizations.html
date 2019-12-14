@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Организации
+{%endblock%}
+{%block content%}
+<form action="" method="post">
+    Это пример создания чего-либо <br>
+    {%csrf_token%}
+    Title: {{form.title}}<br>
+    Director: {{form.director}}<br>
+    <button type="submit" class="btn btn-outline-success">Отпрвить</button>
+
+</form>
+{%endblock%}

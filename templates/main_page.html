@@ -1,51 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    {% load static %}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="{% static 'logo.png'%}" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>ВРаботе</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <a href="#" class="navbar-brand">
-        <img src="{% static 'logo.png'%}" width="40" hight="40" alt="logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Навигация">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a href="#" class="nav-link">Главная страница</a>
-            </li>
-            <li class="nav-item active">
-                <a href="#" class="nav-link">Организации</a>
-            </li>
-            <li class="nav-item active">
-                <a href="#" class="nav-link">Заказы</a>
-            </li>
-            <li class="nav-item active">
-                <a href="#" class="nav-link">Помощь</a>
-            </li>
-        </ul>
-        <form class="registration my-2 my-lg-0 ">
-            <button class="registration-btn btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                    data-target="#sign_in">Авторизация
-            </button>
-        </form>
-    </div>
-</nav>
-<br>
-
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+В Работе
+{%endblock%}
+{%block content%}
 <div class="container-fluid">
     <div class="container">
         <div class="row text-center justify-content-center">
@@ -76,71 +34,4 @@
         </div>
     </div>
 </div>
-
-
-<div class="modal fade" id="sign_in" tabindex="-1" role="dialog"
-     aria-labelledby="sign_in" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="sign_in_label">Авторизация</h5>
-                <button class="close" type="button" data-dismiss="modal"
-                        aria-label="Close">
-              <span aria-hidden="true">
-                &times;
-              </span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <form>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-froup">
-                                    <label for="inputEmail">Почта</label>
-                                    <input type="email" class="form-control" id="inputEmail"
-                                           aria-describedby="emailHelp"
-                                           placeholder="Email" required>
-
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-froup">
-                                    <label for="inputPass">Пароль</label>
-                                    <input type="password" class="form-control" id="inputPass"
-                                           placeholder="Password" required>
-                                    <small id="passHelp" class="form-text text muted">
-                                        Строчные и прописные буквы латиницы и цифры
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                                Запомнить пароль
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Войти</button>
-                            <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+{%endblock%}
