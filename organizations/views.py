@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from organizations import forms
+from json import loads
+from os import path
+from course_work.settings import BASE_DIR
 
 
 def list(request):
-    d = {"form": forms.OrganizationForm()}
-    if request.method == "POST":
-        d = forms.OrganizationForm(request.POST)
-        if d.is_valid():
-            pass
-        return redirect(reverse('list'))
-    return render(request, "list_of_organizations.html", d)
+    with open(path.join(BASE_DIR, "course_work\\data_base.json"), encoding="utf8") as file_json:
+        data = loads(file_json.read(), encoding='utf8')['organizations']
+        return render(request, 'list_of_organizations.html', {"organizations": data})
