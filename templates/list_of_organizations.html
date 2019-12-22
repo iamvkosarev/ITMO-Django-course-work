@@ -3,13 +3,31 @@
 {%block title%}
 Организации
 {%endblock%}
+{%block style%}
+<style>
+</style>
+{%endblock%}
 {%block content%}
-<form action="" method="post">
-    Это пример создания чего-либо <br>
-    {%csrf_token%}
-    Title: {{form.title}}<br>
-    Director: {{form.director}}<br>
-    <button type="submit" class="btn btn-outline-success">Отпрвить</button>
-
-</form>
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Дата основания</th>
+        <th scope="col">Имя директора</th>
+        <th scope="col">Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for org in organizations%}
+    <tr>
+        <th scope="row"></th>
+        <td>{{org.name}}</td>
+        <td>{{org.date_of_foundation}}</td>
+        <td>{{org.director_id}}</td>
+        <td>{{org.description}}</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
 {%endblock%}

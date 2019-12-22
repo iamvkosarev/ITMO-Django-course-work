@@ -4,22 +4,30 @@
 Вход
 {%endblock%}
 {%block content%}
+{%if form_is_not_correct%}
+<br>
 <div class="container-fluid">
     <div class="container">
         <h1>Регистарция</h1>
-        <h5>Здесь вам нужно ввести ваши данные</h5>
+        <h5>Здесь вам нужно ввести ваши данные для регистрации</h5>
+        {%if errors%}<div class="alert alert-danger" role="alert">
+            {%for error in errors%}
+            <li >{{error}}</li>
+            {%endfor%}
+        </div>
+        {%endif%}
         <form method="post">
             {%csrf_token%}
             <div class="row text-left justify-content-center">
                 <div class="col">
                     <div class="form-group">
+                        <label>Фамилия</label>
+                        <input type="text" name="second_name" class="form-control" value="{{second_name}}" required>
+                    </div>
+                    <div class="form-group">
                         <label for="first_name">Имя</label>
                         <input id="first_name" type="text" name="first_name" class="form-control" value="{{first_name}}"
                                required>
-                    </div>
-                    <div class="form-group">
-                        <label>Фамилия</label>
-                        <input type="text" name="second_name" class="form-control" value="{{second_name}}" required>
                     </div>
                     <div class="form-group">
                         <label>Отчество</label>
@@ -34,7 +42,9 @@
                     </div>
                     <div class="form-group">
                         <label>Номер телефона</label>
-                        <input type="number" name="phone_number" class="form-control" value="{{phone_number}}" required>
+                        <input type="text" minlength="12" maxlength="12" name="phone_number" class="form-control"
+                               value="{{phone_number}}" required>
+                        <small class="form-text text-muted">Номер должен начинаться с +7...</small>
                     </div>
                     <div class="form-group">
                         <label>Login</label>
@@ -61,4 +71,15 @@
         </form>
     </div>
 </div>
+{%else%}
+<br>
+<div class="card text-center">
+    <div class="card-body">
+        <h2 class="card-title">Регистрация прошла успешно</h2>
+        <p class="card-text">Теперь вы можете пользоваться услугами нашего сайта. Создавайте заказы, оставляйте <br>
+            отызвы о выполненной работе, а также добавляйте свои организации, чтобы принимать заказы</p>
+        <a href="{%url 'login'%}" class="btn btn-primary">Войти в систему</a>
+    </div>
+</div>
+{%endif%}
 {%endblock%}
