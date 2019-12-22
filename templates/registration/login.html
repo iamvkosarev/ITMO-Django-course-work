@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Вход
+{%endblock%}
+{%block content%}
+<br>
+<div class="container-fluid">
+    <div class="container">
+        <h1>Вход в стистему</h1>
+        <h5>Здесь вам нужно ввести ваши данные для входа</h5>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <div class="form-froup">
+                        <label for="inputEmail">Почта</label>
+                        <input type="email" class="form-control" id="inputEmail"
+                               aria-describedby="emailHelp"
+                               placeholder="Email" required>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-froup">
+                        <label for="inputPass">Пароль</label>
+                        <input type="password" class="form-control" id="inputPass"
+                               placeholder="Password" required>
+                        <small id="passHelp" class="form-text text muted">
+                            Строчные и прописные буквы латиницы и цифры
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    Запомнить пароль
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}

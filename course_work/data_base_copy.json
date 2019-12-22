@@ -1,0 +1,136 @@
+{
+  "organizations": [
+    {
+      "id": 0,
+      "name": "Робот-X",
+      "director_id": 0,
+      "description": "Создаём роботов",
+      "date_of_foundation": "07.11.2015",
+      "TIN": "",
+      "workers": [],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 1,
+      "name": "Креати8ные",
+      "director_id": 1,
+      "description": "Делаем что угодно",
+      "date_of_foundation": "05.05.2005",
+      "TIN": "",
+      "workers": [],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 2,
+      "name": "Строй-мастер",
+      "director_id": 2,
+      "description": "Ремонт и отделка квартир и домов, строительство загородных домов, дизайн и проектирование, декоративные штукатурки ",
+      "date_of_foundation": "13.08.2017",
+      "TIN": "",
+      "workers": [],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 3,
+      "name": "Best name company",
+      "director_id": 3,
+      "description": "Мы являться лучшая компания в вашей строне",
+      "date_of_foundation": "30.02.2014",
+      "TIN": "",
+      "workers": [],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 4,
+      "name": "КрУтОй ДиЗаЙн",
+      "director_id": 4,
+      "description": "-==В_А==-/ Сделаем крутой плакат или рекламный банер",
+      "date_of_foundation": "01.01.2011",
+      "TIN": "",
+      "workers": [],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "first_name": "Иван",
+      "second_name": "Роботов",
+      "patronymic": "Любович",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "ivan_robotov_l",
+      "email": "ivan_robotov_l@gmail.com",
+      "password": "aedbec9b3df3d0ea2cd886e4fb08ab77fdac3f396ee7e84b20eba8cccd148139",
+      "phone_number": "+79010101010",
+      "reviews": []
+    },
+    {
+      "id": 1,
+      "first_name": "Филимон-2000",
+      "second_name": "Скибидивапапапов",
+      "patronymic": "Иванович",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "terminator2000_phill",
+      "email": "terminator2000_phill@mail.ru",
+      "password": "cc258e24c0cbafb3f26c0c2ce2aead65b7096e75ff2d73709a8221a496bdb7f4",
+      "phone_number": "",
+      "reviews": []
+    },
+    {
+      "id": 2,
+      "first_name": "Сергей",
+      "second_name": "Колесников",
+      "patronymic": "Андреевич",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "kolesnikov_serga555",
+      "email": "kolesnikov_serga555@gmail.com",
+      "password": "6c70b4a95edb01ff6e4633bfbd413aae5aad2b3adcb5848cf3c27191ed22ba78",
+      "phone_number": "",
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "first_name": "",
+      "second_name": "",
+      "patronymic": "",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "",
+      "email": "",
+      "password": "",
+      "phone_number": "",
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "first_name": "",
+      "second_name": "",
+      "patronymic": "",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "",
+      "email": "",
+      "password": "",
+      "phone_number": "",
+      "reviews": []
+    }
+  ]
+}
