@@ -39,12 +39,20 @@
                 <a href="#" class="nav-link">Помощь</a>
             </li>
         </ul>
+        {%if request.session.user%}
+        <form class="authorization my-2 my-lg-0 ">
+            <a style="color: #ffffff" class="registration-btn btn btn-outline-success my-2 my-sm-0" href="{%url 'logout'%}">
+                Выход {{request.session.user.login}}
+            </a>
+        </form>
+        {%else%}
         <form class="authorization my-2 my-lg-0 ">
             <a style="color: #ffffff" class="registration-btn btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
                data-target="#sign_in">
                 Авторизация
             </a>
         </form>
+        {%endif%}
     </div>
 </nav>
 

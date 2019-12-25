@@ -4,15 +4,16 @@
 Вход
 {%endblock%}
 {%block content%}
-{%if form_is_not_correct%}
+{%if form_is_not_ready%}
 <br>
 <div class="container-fluid">
     <div class="container">
         <h1>Регистарция</h1>
         <h5>Здесь вам нужно ввести ваши данные для регистрации</h5>
-        {%if errors%}<div class="alert alert-danger" role="alert">
+        {%if errors%}
+        <div class="alert alert-danger" role="alert">
             {%for error in errors%}
-            <li >{{error}}</li>
+            <li>{{error}}</li>
             {%endfor%}
         </div>
         {%endif%}

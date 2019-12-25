@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
@@ -116,7 +115,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-SESSION_FILE_PATH = "django.contrib.sessions.backends.signed_cookies"
-
-SESSION_COOKIE_HTTPONLY = True # Запрет JS на доступ к кукам
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+SESSION_FILE_PATH = BASE_DIR + "//sessions"

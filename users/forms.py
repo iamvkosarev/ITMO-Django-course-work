@@ -68,6 +68,9 @@ class UserForm(forms.Form):
                      "first_name": self.cleaned_data["first_name"],
                      "second_name": self.cleaned_data["second_name"],
                      "patronymic": self.cleaned_data["patronymic"],
+                     "short_form": self.cleaned_data["second_name"] + " " +
+                                   self.cleaned_data["first_name"] + "." +
+                                   self.cleaned_data["patronymic"] + ".",
                      "birthday": self.cleaned_data["birthday"].strftime("%m.%d.%Y"),
                      "status": "just_user",
                      "orders": [],
@@ -79,3 +82,32 @@ class UserForm(forms.Form):
         file_data["users"].append(user_info)
         with open(path.join(BASE_DIR, "course_work\\data_base.json"), "w", encoding='utf8') as jsonFile:
             json.dump(file_data, jsonFile, ensure_ascii=False)
+
+
+class LoginForm(forms.Form):
+    login_or_email = forms.CharField()
+    password = forms.CharField(label="Password",
+                               widget=forms.PasswordInput)
+
+    def hash_password(self):
+        ret = super(LoginForm, self).is_valid()
+        self.cleaned_data["password"] = sha256(self.cleaned_data["password"].encode("ascii")).hexdigest()
+
+    def is_valid(self):
+        ret = super(LoginForm, self).is_valid()
+        self.hash_password()
+        return_data = {"error": "", "user": {}}
+        login_or_email = self.cleaned_data["login_or_email"]
+        password = self.cleaned_data["password"]
+        file_json = open(path.join(BASE_DIR, "course_work\\data_base.json"), encoding="utf8")
+        users = loads(file_json.read(), encoding='utf8')['users']
+        file_json.close()
+        for user in users:
+            if user["login"] == login_or_email or user["email"] == login_or_email:
+                if password == user["password"]:
+                    return_data["user"] = user
+                else:
+                    return_data["error"] = "Неправильный пароль"
+        if return_data["user"] == {} and return_data["error"] == "":
+            return_data["error"] = "Пользователя с данным логином или почтой нет в базе данных"
+        return return_data
