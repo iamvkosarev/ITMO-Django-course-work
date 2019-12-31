@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Организация {{object.name}}
+{%endblock%}
+{%block content%}
+<br>
+<div class="container-fluid">
+    <div class="container">
+        <h1>Данные по организации</h1>
+        {{object.name}}
+    </div>
+</div>
+{%endblock%}

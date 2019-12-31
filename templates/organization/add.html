@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Добавление организации
+{%endblock%}
+{%block content%}
+{%if form_is_not_ready%}
+<br>
+<div class="container-fluid">
+    <div class="container">
+        <h1>Регистрация</h1>
+        <h5>Здесь вам нужно ввести ваши данные для регистрации</h5>
+        {%if errors%}
+        <div class="alert alert-danger" role="alert">
+            {%for error in errors%}
+            <li>{{error}}</li>
+            {%endfor%}
+        </div>
+        {%endif%}
+        <form method="post">
+            {%csrf_token%}
+            <div class="form-group">
+                <label>Название</label>
+                <input type="text" minlength="3" maxlength="25" name="name" class="form-control" value="{{name}}"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>ИНН</label>
+                <input type="text" minlength="10" maxlength="10" name="TIN" class="form-control" value="{{TIN}}"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>Дата основания</label>
+                <input type="date" name="date_of_foundation" class="form-control" value="{{date_of_foundation}}"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>ID директора</label>
+                <input type="number" name="director_id" class="form-control" value="{{director_id}}" required>
+                <small class="form-text text-muted">Можно указать ваш ID: {{request.session.user.id}}</small>
+            </div>
+            <div class="form-group">
+                <label>Описание</label>
+                <input type="text" minlength="15" maxlength="100" name="description" class="form-control"
+                       value="{{description}}" required>
+            </div>
+            <button type="submit" class="btn btn-outline-success" style="float: right;">Добавить</button>
+        </form>
+    </div>
+</div>
+{%else%}
+<br>
+<div class="card text-center">
+    <div class="card-body">
+        <h2 class="card-title">Организация успешно добавлена</h2>
+        <p class="card-text">Теперь вы можете принимать заказы.</p>
+        <a href="/organizations/{{ id }}/" class="btn btn-primary">Перейти к организации</a>
+    </div>
+</div>
+{%endif%}
+{%endblock%}

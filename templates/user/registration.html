@@ -1,14 +1,14 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block title%}
-Вход
+Регистрация
 {%endblock%}
 {%block content%}
 {%if form_is_not_ready%}
 <br>
 <div class="container-fluid">
     <div class="container">
-        <h1>Регистарция</h1>
+        <h1>Регистрация</h1>
         <h5>Здесь вам нужно ввести ваши данные для регистрации</h5>
         {%if errors%}
         <div class="alert alert-danger" role="alert">

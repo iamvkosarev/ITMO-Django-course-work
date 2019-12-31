@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Организации
+{%endblock%}
+{%block style%}
+<style>
+</style>
+{%endblock%}
+{%block content%}
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"><h1>    </h1></th>
+                <th scope="col">Название</th>
+                <th scope="col">Дата основания</th>
+                <th scope="col">Директор</th>
+                <th scope="col">Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%for org in organizations%}
+            <tr>
+                <td></td>
+                <td><a href="/organizations/{{ org.id }}/">{{org.name}}</a></td>
+                <td>{{org.date_of_foundation}}</td>
+                <td>{{org.director_id}}</td>
+                <td>{{org.description}}</td>
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+{%endblock%}
