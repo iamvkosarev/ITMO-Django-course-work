@@ -4,7 +4,7 @@ from . import forms
 
 
 def login(request):
-    d = {"form": forms.LoginForm(),
+    context = {"form": forms.LoginForm(),
          "error": "",
          "there_is_error": False}
     if "user" in request.session:
@@ -13,30 +13,36 @@ def login(request):
         obj = forms.LoginForm(request.POST)
         data = obj.is_valid()
         if data["error"] != "":
-            d["error"] = data["error"]
-            d["there_is_error"] = True
+            context["error"] = data["error"]
+            context["there_is_error"] = True
         else:
             request.session["user"] = data["user"]
             return redirect(reverse("main_page"))
-    return render(request, 'registration\login.html', d)
+    return render(request, 'user/login.html', context)
 
 
 def logout(request):
-    if "id" in request.session:
+    if "user" in request.session:
         del request.session["user"]
     return redirect(reverse("main_page"))
 
 
 def registration(request):
-    d = {"form": forms.UserForm(),
+    context = {"form": forms.UserForm(),
          "errors": [],
          "form_is_not_ready": True}
     if request.method == "POST":
         data = forms.UserForm(request.POST)
-        d["form"] = forms.UserForm(request.POST)
+        context["form"] = forms.UserForm(request.POST)
         errors = data.is_valid()
         if len(errors) > 0:
-            d["errors"] = errors
+            context["errors"] = errors
         else:
-            d["form_is_not_ready"] = False
-    return render(request, "registration\\registration.html", d)
+            context["form_is_not_ready"] = False
+    return render(request, "user/registration.html", context)
+
+
+def account(request):
+    if "user" not in request.session:
+        return render(request, 'main_page.html', {})
+    return render(request, 'user/account.html', {"user": request.session["user"]})

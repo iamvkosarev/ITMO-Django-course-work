@@ -57,7 +57,6 @@ class UserForm(forms.Form):
                 break
         if len(errors) == 0:
             self.save()
-            print("Добавлен пользователь")
         return errors
 
     def save(self):
@@ -69,8 +68,9 @@ class UserForm(forms.Form):
                      "second_name": self.cleaned_data["second_name"],
                      "patronymic": self.cleaned_data["patronymic"],
                      "short_form": self.cleaned_data["second_name"] + " " +
-                                   self.cleaned_data["first_name"] + "." +
-                                   self.cleaned_data["patronymic"] + ".",
+                                   self.cleaned_data["first_name"][0] + "." +
+                                   ((self.cleaned_data["patronymic"][0] + ".") if len(
+                                       self.cleaned_data["patronymic"]) != 0 else ""),
                      "birthday": self.cleaned_data["birthday"].strftime("%m.%d.%Y"),
                      "status": "just_user",
                      "orders": [],
@@ -82,6 +82,7 @@ class UserForm(forms.Form):
         file_data["users"].append(user_info)
         with open(path.join(BASE_DIR, "course_work\\data_base.json"), "w", encoding='utf8') as jsonFile:
             json.dump(file_data, jsonFile, ensure_ascii=False)
+        print("Добавлен пользователь: {}".format(user_info["short_form"]))
 
 
 class LoginForm(forms.Form):
