@@ -59,6 +59,48 @@
       "reviews": [],
       "completed_orders": [],
       "topics": []
+    },
+    {
+      "id": 5,
+      "name": "Севина компания",
+      "description": "Мы занимаемся созданием вкуснейшей еды",
+      "TIN": "1234567890",
+      "director_id": 3,
+      "date_of_foundation": "11.07.2015",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 6,
+      "name": "Что-то с чем-то",
+      "description": "Мы что-то с чем-то",
+      "TIN": "9833131313",
+      "director_id": 3,
+      "date_of_foundation": "11.07.2015",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 7,
+      "name": "Ракамакафо",
+      "description": "Рака-рака-ракамакафо",
+      "TIN": "1231324141",
+      "director_id": 0,
+      "date_of_foundation": "03.12.3122",
+      "workers": [
+        0
+      ],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
     }
   ],
   "users": [
@@ -67,6 +109,7 @@
       "first_name": "Иван",
       "second_name": "Роботов",
       "patronymic": "Любович",
+      "short_form" : "Роботов И.Л.",
       "birthday": "",
       "status": "just_user",
       "orders": [],
@@ -81,7 +124,7 @@
       "first_name": "Филимон-2000",
       "second_name": "Скибидивапапапов",
       "patronymic": "Иванович",
-      "short_form" : "Скибидивапапапов Ф.И.",
+      "short_form": "Скибидивапапапов Ф.И.",
       "birthday": "",
       "status": "just_user",
       "orders": [],
@@ -96,7 +139,7 @@
       "first_name": "Сергей",
       "second_name": "Колесников",
       "patronymic": "Андреевич",
-      "short_form" : "Колесников С.А.",
+      "short_form": "Колесников С.А.",
       "birthday": "",
       "status": "just_user",
       "orders": [],
@@ -107,26 +150,11 @@
       "reviews": []
     },
     {
-      "id": 3,
-      "first_name": "Всеволод",
-      "second_name": "Косарев",
-      "patronymic": "Денисович",
-      "short_form" : "Косарев В.Д.",
-      "birthday": "11.07.2001",
-      "status": "just_user",
-      "orders": [],
-      "login": "iamvkosarev",
-      "email": "iamvkosarev@gmail.com",
-      "password": "f26ac75d7fc9c4bcf6e53dc67cf24d399ba36e6dc36031139d85ba52c9a7c7ca",
-      "phone_number": "+79514898989",
-      "reviews": []
-    },
-    {
       "id": 4,
       "first_name": "Иван",
       "second_name": "Иванов",
       "patronymic": "Иванович",
-      "short_form" : "Иванов И.И.",
+      "short_form": "Иванов И.И.",
       "birthday": "01.01.2001",
       "status": "just_user",
       "orders": [],
@@ -134,6 +162,21 @@
       "email": "ivan@ivanov.ru",
       "password": "cd0b9452fc376fc4c35a60087b366f70d883fc901524daf1f122fbd319384f6a",
       "phone_number": "+79999999999",
+      "reviews": []
+    },
+    {
+      "id": 0,
+      "first_name": "Всеволод",
+      "second_name": "Косарев",
+      "patronymic": "Денисович",
+      "short_form": "Косарев В.Д.",
+      "birthday": "11.07.2001",
+      "status": "just_user",
+      "orders": [],
+      "login": "iamvkosarev",
+      "email": "iamvkosarev@gmail.com",
+      "password": "f26ac75d7fc9c4bcf6e53dc67cf24d399ba36e6dc36031139d85ba52c9a7c7ca",
+      "phone_number": "+79514898989",
       "reviews": []
     }
   ]

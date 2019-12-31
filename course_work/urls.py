@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.urls import path
 from course_work import views
-
 urlpatterns = [
     # url(r'^admin/', views.admin, name='admin'),
     url(r'^$', views.main_page, name='main_page'),

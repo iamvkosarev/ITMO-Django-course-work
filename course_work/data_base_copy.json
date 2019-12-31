@@ -59,78 +59,30 @@
       "reviews": [],
       "completed_orders": [],
       "topics": []
-    }
-  ],
-  "users": [
-    {
-      "id": 0,
-      "first_name": "Иван",
-      "second_name": "Роботов",
-      "patronymic": "Любович",
-      "birthday": "",
-      "status": "just_user",
-      "orders": [],
-      "login": "ivan_robotov_l",
-      "email": "ivan_robotov_l@gmail.com",
-      "password": "aedbec9b3df3d0ea2cd886e4fb08ab77fdac3f396ee7e84b20eba8cccd148139",
-      "phone_number": "+79010101010",
-      "reviews": []
     },
     {
-      "id": 1,
-      "first_name": "Филимон-2000",
-      "second_name": "Скибидивапапапов",
-      "patronymic": "Иванович",
-      "birthday": "",
-      "status": "just_user",
-      "orders": [],
-      "login": "terminator2000_phill",
-      "email": "terminator2000_phill@mail.ru",
-      "password": "cc258e24c0cbafb3f26c0c2ce2aead65b7096e75ff2d73709a8221a496bdb7f4",
-      "phone_number": "",
-      "reviews": []
+      "id": 5,
+      "name": "Севина компания",
+      "description": "Мы занимаемся созданием вкуснейшей еды",
+      "TIN": "1234567890",
+      "director_id": 3,
+      "date_of_foundation": "11.07.2015",
+      "workers": [3],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
     },
     {
-      "id": 2,
-      "first_name": "Сергей",
-      "second_name": "Колесников",
-      "patronymic": "Андреевич",
-      "birthday": "",
-      "status": "just_user",
-      "orders": [],
-      "login": "kolesnikov_serga555",
-      "email": "kolesnikov_serga555@gmail.com",
-      "password": "6c70b4a95edb01ff6e4633bfbd413aae5aad2b3adcb5848cf3c27191ed22ba78",
-      "phone_number": "",
-      "reviews": []
-    },
-    {
-      "id": 3,
-      "first_name": "",
-      "second_name": "",
-      "patronymic": "",
-      "birthday": "",
-      "status": "just_user",
-      "orders": [],
-      "login": "",
-      "email": "",
-      "password": "",
-      "phone_number": "",
-      "reviews": []
-    },
-    {
-      "id": 4,
-      "first_name": "",
-      "second_name": "",
-      "patronymic": "",
-      "birthday": "",
-      "status": "just_user",
-      "orders": [],
-      "login": "",
-      "email": "",
-      "password": "",
-      "phone_number": "",
-      "reviews": []
+      "id": 6,
+      "name": "Что-то с чем-то",
+      "description": "Мы что-то с чем-то",
+      "TIN": "9833131313",
+      "director_id": 3,
+      "date_of_foundation": "11.07.2015",
+      "workers": [3],
+      "reviews": [],
+      "completed_orders": [],
+      "topics": []
     }
   ]
 }
