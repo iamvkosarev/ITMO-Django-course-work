@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from . import forms
+from course_work.views import find_users_organizations
 
 
 def login(request):
@@ -8,7 +9,7 @@ def login(request):
          "error": "",
          "there_is_error": False}
     if "user" in request.session:
-        return render(request, 'main_page.html', {})
+        return redirect(reverse("main_page"))
     if request.method == "POST":
         obj = forms.LoginForm(request.POST)
         data = obj.is_valid()
@@ -16,6 +17,7 @@ def login(request):
             context["error"] = data["error"]
             context["there_is_error"] = True
         else:
+            request.session["users_organizations"] = find_users_organizations(data["user"]["id"])
             request.session["user"] = data["user"]
             return redirect(reverse("main_page"))
     return render(request, 'user/login.html', context)
@@ -24,10 +26,13 @@ def login(request):
 def logout(request):
     if "user" in request.session:
         del request.session["user"]
+        del request.session["users_organizations"]
     return redirect(reverse("main_page"))
 
 
 def registration(request):
+    if "user" in request.session:
+        return redirect(reverse("main_page"))
     context = {"form": forms.UserForm(),
          "errors": [],
          "form_is_not_ready": True}
@@ -44,5 +49,5 @@ def registration(request):
 
 def account(request):
     if "user" not in request.session:
-        return render(request, 'main_page.html', {})
+        return redirect(reverse("main_page"))
     return render(request, 'user/account.html', {"user": request.session["user"]})
