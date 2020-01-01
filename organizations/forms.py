@@ -10,10 +10,14 @@ class OrganizationForm(forms.Form):
     description = forms.CharField(min_length=15, max_length=100)
     date_of_foundation = forms.DateField()
     director_id = forms.CharField()
+    phone_number = forms.CharField()
+    email = forms.CharField()
     TIN = forms.CharField(min_length=10, max_length=10)
+    creater_id = -1
 
-    def is_valid(self):
+    def is_valid(self, creater_id):
         ret = super(OrganizationForm, self).is_valid()
+        self.creater_id = creater_id
         return_data = {"errors": []}
         name = self.cleaned_data["name"]
         TIN = self.cleaned_data["TIN"]
@@ -45,8 +49,11 @@ class OrganizationForm(forms.Form):
                              "TIN": self.cleaned_data["TIN"],
                              "director_id": int(self.cleaned_data["director_id"]),
                              "date_of_foundation": self.cleaned_data["date_of_foundation"].strftime("%m.%d.%Y"),
-                             "workers": [int(self.cleaned_data["director_id"])],
+                             "workers": [int(self.cleaned_data["director_id"])] if self.creater_id == int(
+                                 self.cleaned_data[
+                                     "director_id"]) else [int(self.cleaned_data["director_id"]), self.creater_id],
                              "reviews": [],
+                             "contacts": [self.cleaned_data["email"], self.cleaned_data["phone_number"]],
                              "completed_orders": [],
                              "topics": []
                              }

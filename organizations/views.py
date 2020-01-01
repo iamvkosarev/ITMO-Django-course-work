@@ -1,32 +1,26 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, reverse
 from organizations import forms
 from json import loads
 from os import path
+from course_work.views import find_users_organizations
 from course_work.settings import BASE_DIR
-
+from course_work.views import load_organizations_data
 
 def list(request):
     file_json = open(path.join(BASE_DIR, "course_work\\data_base.json"), encoding="utf8")
     data = loads(file_json.read(), encoding='utf8')
     file_json.close()
-    for organization in data['organizations']:
-        director_id = organization["director_id"]
-        for user in data["users"]:
-            if user["id"] == director_id:
-                organization["director_id"] = user["short_form"]
-                break
-        else:
-            organization["director_id"] = "Отсутсвует"
+    load_organizations_data(data)
     return render(request, 'organization/list.html', {"organizations": data['organizations']})
 
 
 def dynamic_lookup_view(request, id):
     object = -1
     file_json = open(path.join(BASE_DIR, "course_work\\data_base.json"), encoding="utf8")
-    organizations = loads(file_json.read(), encoding='utf8')['organizations']
+    data = loads(file_json.read(), encoding='utf8')
     file_json.close()
-    for organization in organizations:
+    load_organizations_data(data)
+    for organization in data["organizations"]:
         if id == organization["id"]:
             object = organization
     context = {"object": object, "id": id}
@@ -38,7 +32,7 @@ def dynamic_lookup_view(request, id):
 
 def add(request):
     if "user" not in request.session:
-        return render(request, 'main_page.html', {})
+        return redirect(reverse("main_page"))
     context = {"form": forms.OrganizationForm(),
                "errors": [],
                "form_is_not_ready": True,
@@ -46,10 +40,11 @@ def add(request):
     if request.method == "POST":
         data = forms.OrganizationForm(request.POST)
         context["form"] = forms.OrganizationForm(request.POST)
-        return_data = data.is_valid()
+        return_data = data.is_valid(request.session["user"]["id"])
         if len(return_data["errors"]) > 0:
             context["errors"] = return_data["errors"]
         else:
             context["form_is_not_ready"] = False
+            request.session["users_organizations"] = find_users_organizations(data["user"]["id"])
             context["id"] = return_data["id"]
     return render(request, "organization/add.html", context)
