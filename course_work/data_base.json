@@ -6,8 +6,12 @@
       "director_id": 0,
       "description": "Создаём роботов",
       "date_of_foundation": "07.11.2015",
-      "TIN": "",
+      "TIN": "1234567231",
       "workers": [],
+      "contacts": [
+        "robor_x@gmail.com",
+        "+79500008989"
+      ],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -19,7 +23,8 @@
       "description": "Делаем что угодно",
       "date_of_foundation": "05.05.2005",
       "TIN": "",
-      "workers": [],
+      "workers": [1, 3],
+      "contacts": [],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -33,6 +38,7 @@
       "TIN": "",
       "workers": [],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -45,6 +51,7 @@
       "TIN": "",
       "workers": [],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -56,6 +63,7 @@
       "date_of_foundation": "01.01.2011",
       "TIN": "",
       "workers": [],
+      "contacts": [],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -71,6 +79,7 @@
         3
       ],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -85,6 +94,7 @@
         3
       ],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -99,6 +109,56 @@
         0
       ],
       "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 8,
+      "name": "Арсенал",
+      "description": "Наша компания занимается строительно монтажными работами",
+      "TIN": "7449039327",
+      "director_id": 3,
+      "date_of_foundation": "02.01.2005",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 9,
+      "name": "ART_STUDIO",
+      "description": "Рисуем крутые арты на любую тему",
+      "TIN": "7771231237",
+      "director_id": 2,
+      "date_of_foundation": "02.01.2200",
+      "workers": [
+        2,
+        0
+      ],
+      "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 10,
+      "name": "Алмаз-Тех",
+      "description": "Шлифовка, обработка и резьба по металлу",
+      "TIN": "1231231234",
+      "director_id": 3,
+      "date_of_foundation": "02.12.2012",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "contacts": [
+        "diamond_tech@gmail.com",
+        "+79514898989"
+      ],
       "completed_orders": [],
       "topics": []
     }
@@ -109,7 +169,7 @@
       "first_name": "Иван",
       "second_name": "Роботов",
       "patronymic": "Любович",
-      "short_form" : "Роботов И.Л.",
+      "short_form": "Роботов И.Л.",
       "birthday": "",
       "status": "just_user",
       "orders": [],
@@ -165,7 +225,7 @@
       "reviews": []
     },
     {
-      "id": 0,
+      "id": 3,
       "first_name": "Всеволод",
       "second_name": "Косарев",
       "patronymic": "Денисович",
@@ -179,5 +239,7 @@
       "phone_number": "+79514898989",
       "reviews": []
     }
+  ],
+  "orders": [
   ]
 }

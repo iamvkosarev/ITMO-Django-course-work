@@ -6,8 +6,12 @@
       "director_id": 0,
       "description": "Создаём роботов",
       "date_of_foundation": "07.11.2015",
-      "TIN": "",
+      "TIN": "1234567231",
       "workers": [],
+      "contacts": [
+        "robor_x@gmail.com",
+        "+79500008989"
+      ],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -20,6 +24,7 @@
       "date_of_foundation": "05.05.2005",
       "TIN": "",
       "workers": [],
+      "contacts": [],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -33,6 +38,7 @@
       "TIN": "",
       "workers": [],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -45,6 +51,7 @@
       "TIN": "",
       "workers": [],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -56,6 +63,7 @@
       "date_of_foundation": "01.01.2011",
       "TIN": "",
       "workers": [],
+      "contacts": [],
       "reviews": [],
       "completed_orders": [],
       "topics": []
@@ -67,8 +75,11 @@
       "TIN": "1234567890",
       "director_id": 3,
       "date_of_foundation": "11.07.2015",
-      "workers": [3],
+      "workers": [
+        3
+      ],
       "reviews": [],
+      "contacts": [],
       "completed_orders": [],
       "topics": []
     },
@@ -79,10 +90,156 @@
       "TIN": "9833131313",
       "director_id": 3,
       "date_of_foundation": "11.07.2015",
-      "workers": [3],
+      "workers": [
+        3
+      ],
       "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 7,
+      "name": "Ракамакафо",
+      "description": "Рака-рака-ракамакафо",
+      "TIN": "1231324141",
+      "director_id": 0,
+      "date_of_foundation": "03.12.3122",
+      "workers": [
+        0
+      ],
+      "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 8,
+      "name": "Арсенал",
+      "description": "Наша компания занимается строительно монтажными работами",
+      "TIN": "7449039327",
+      "director_id": 3,
+      "date_of_foundation": "02.01.2005",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 9,
+      "name": "ART_STUDIO",
+      "description": "Рисуем крутые арты на любую тему",
+      "TIN": "7771231237",
+      "director_id": 2,
+      "date_of_foundation": "02.01.2200",
+      "workers": [
+        2,
+        0
+      ],
+      "reviews": [],
+      "contacts": [],
+      "completed_orders": [],
+      "topics": []
+    },
+    {
+      "id": 10,
+      "name": "Алмаз-Тех",
+      "description": "Шлифовка, обработка и резьба по металлу",
+      "TIN": "1231231234",
+      "director_id": 3,
+      "date_of_foundation": "02.12.2012",
+      "workers": [
+        3
+      ],
+      "reviews": [],
+      "contacts": [
+        "diamond_tech@gmail.com",
+        "+79514898989"
+      ],
       "completed_orders": [],
       "topics": []
     }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "first_name": "Иван",
+      "second_name": "Роботов",
+      "patronymic": "Любович",
+      "short_form": "Роботов И.Л.",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "ivan_robotov_l",
+      "email": "ivan_robotov_l@gmail.com",
+      "password": "aedbec9b3df3d0ea2cd886e4fb08ab77fdac3f396ee7e84b20eba8cccd148139",
+      "phone_number": "+79010101010",
+      "reviews": []
+    },
+    {
+      "id": 1,
+      "first_name": "Филимон-2000",
+      "second_name": "Скибидивапапапов",
+      "patronymic": "Иванович",
+      "short_form": "Скибидивапапапов Ф.И.",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "terminator2000_phill",
+      "email": "terminator2000_phill@mail.ru",
+      "password": "cc258e24c0cbafb3f26c0c2ce2aead65b7096e75ff2d73709a8221a496bdb7f4",
+      "phone_number": "",
+      "reviews": []
+    },
+    {
+      "id": 2,
+      "first_name": "Сергей",
+      "second_name": "Колесников",
+      "patronymic": "Андреевич",
+      "short_form": "Колесников С.А.",
+      "birthday": "",
+      "status": "just_user",
+      "orders": [],
+      "login": "kolesnikov_serga555",
+      "email": "kolesnikov_serga555@gmail.com",
+      "password": "6c70b4a95edb01ff6e4633bfbd413aae5aad2b3adcb5848cf3c27191ed22ba78",
+      "phone_number": "",
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "first_name": "Иван",
+      "second_name": "Иванов",
+      "patronymic": "Иванович",
+      "short_form": "Иванов И.И.",
+      "birthday": "01.01.2001",
+      "status": "just_user",
+      "orders": [],
+      "login": "ivan",
+      "email": "ivan@ivanov.ru",
+      "password": "cd0b9452fc376fc4c35a60087b366f70d883fc901524daf1f122fbd319384f6a",
+      "phone_number": "+79999999999",
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "first_name": "Всеволод",
+      "second_name": "Косарев",
+      "patronymic": "Денисович",
+      "short_form": "Косарев В.Д.",
+      "birthday": "11.07.2001",
+      "status": "just_user",
+      "orders": [],
+      "login": "iamvkosarev",
+      "email": "iamvkosarev@gmail.com",
+      "password": "f26ac75d7fc9c4bcf6e53dc67cf24d399ba36e6dc36031139d85ba52c9a7c7ca",
+      "phone_number": "+79514898989",
+      "reviews": []
+    }
+  ],
+  "orders": [
   ]
 }
