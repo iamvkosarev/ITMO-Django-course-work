@@ -8,8 +8,8 @@
 <br>
 <div class="container-fluid">
     <div class="container">
-        <h1>Регистрация</h1>
-        <h5>Здесь вам нужно ввести ваши данные для регистрации</h5>
+        <h1>Добавление организации</h1>
+        <h5>Здесь вам нужно ввести данные вашей организации</h5>
         {%if errors%}
         <div class="alert alert-danger" role="alert">
             {%for error in errors%}
@@ -28,6 +28,17 @@
                 <label>ИНН</label>
                 <input type="text" minlength="10" maxlength="10" name="TIN" class="form-control" value="{{TIN}}"
                        required>
+            </div>
+            <div class="form-group">
+                <label>Электронная почта для связи</label>
+                <input type="email" name="email" class="form-control" value="{{email}}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Телефон для связи</label>
+                <input type="text" minlength="12" maxlength="12" name="phone_number" class="form-control"
+                       value="{{phone_number}}" required>
+                <small class="form-text text-muted">Номер должен начинаться с +7...</small>
             </div>
             <div class="form-group">
                 <label>Дата основания</label>

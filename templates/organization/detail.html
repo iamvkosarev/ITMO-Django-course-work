@@ -4,11 +4,68 @@
 Организация {{object.name}}
 {%endblock%}
 {%block content%}
-<br>
-<div class="container-fluid">
-    <div class="container">
-        <h1>Данные по организации</h1>
-        {{object.name}}
+<div class="container" wfd-id="0">
+    <br>
+    <div class="row" wfd-id="5">
+
+        <div class="col-md-4 order-md-2 mb-4" wfd-id="68">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted" wfd-id="88">Заказы</span>
+                <span class="badge badge-secondary badge-pill" wfd-id="87">Общая стоимость</span>
+
+            </h4>
+            <ul class="list-group mb-3" wfd-id="72">
+                <li class="list-group-item d-flex justify-content-between lh-condensed" wfd-id="84">
+                    <div wfd-id="86">
+                        <h6 class="my-0">Название заказа</h6>
+                        <small class="text-muted">Описание</small>
+                    </div>
+                    <span class="text-muted" wfd-id="85">120₽</span>
+                </li>
+            </ul>
+            <h4>
+                <button class="btn btn-primary  btn-block" type="submit">Сделать заказ
+                </button>
+            </h4>
+        </div>
+        <div class="col-md-4 order-md-2 mb-2" wfd-id="68">
+            <li class="list-group-item d-flex justify-content-between lh-condensed" wfd-id="84">
+                <div wfd-id="86">
+                    <h4>{{object.name}}</h4>
+                    <p class="font-weight-normal">Дата основания: {{object.date_of_foundation}} <br> ИНН: {{object.TIN}}
+                        <br>
+                        Директор: {{object.director_id}}</p>
+                    <h5>Описание: </h5>
+                    <p class="font-weight-normal">{{object.description}}</p>
+                    <h5>Контакты: </h5>
+                    <p class="font-weight-normal">
+                        {%for contact in object.contacts %}
+                        {{contact}} <br>
+                        {%endfor%}
+                    </p>
+                </div>
+            </li>
+        </div>
+        <div class="col-md-4 order-md-2 mb-4" wfd-id="68">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted" wfd-id="88">Отзывы</span>
+                <span class="badge badge-secondary badge-pill" wfd-id="87">Число отзывов</span>
+
+            </h4>
+            <ul class="list-group mb-3" wfd-id="72">
+                <li class="list-group-item d-flex justify-content-between lh-condensed" wfd-id="84">
+                    <div wfd-id="86">
+                        <h6 class="my-0">@автор | Тема отзыва</h6>
+                        <small class="text-muted">Сам отзыв</small>
+                    </div>
+                    <span class="text-muted" wfd-id="85">Дата публикации</span>
+                </li>
+            </ul>
+            <h4>
+                <button class="btn btn-primary  btn-block" type="submit">Оставить отзыв
+                </button>
+            </h4>
+        </div>
     </div>
 </div>
 {%endblock%}

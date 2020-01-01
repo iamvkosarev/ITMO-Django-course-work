@@ -8,26 +8,67 @@
 </style>
 {%endblock%}
 {%block content%}
+<br>
+<div class="container-fluid">
+    {%if request.session.users_organizations%}
+    <div class="container">
+        <h1>Ваши организации</h1>
         <table class="table">
-            <thead class="thead-light">
+            <thead>
             <tr>
-                <th scope="col"><h1>    </h1></th>
                 <th scope="col">Название</th>
-                <th scope="col">Дата основания</th>
-                <th scope="col">Директор</th>
                 <th scope="col">Описание</th>
+                <th scope="col">Контакты</th>
+                <th scope="col">Директор</th>
+                <th scope="col">Дата основания</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%for org in request.session.users_organizations%}
+            <tr>
+                <td width="20%"><a href="/organizations/{{ org.id }}/">{{org.name}}</a></td>
+                <td width="30%">{{org.description}}</td>
+                <td width="10%">
+                    {%for contact in org.contacts %}
+                    {{contact}}
+                    {%endfor%}
+                </td>
+                <td width="20%">{{org.director_id}}</td>
+                <td width="10%">{{org.date_of_foundation}}</td>
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+    {%endif%}
+    <div class="container">
+        <h1>Все организации</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Название</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Контакты</th>
+                <th scope="col">Директор</th>
+                <th scope="col">Дата основания</th>
             </tr>
             </thead>
             <tbody>
             {%for org in organizations%}
             <tr>
-                <td></td>
-                <td><a href="/organizations/{{ org.id }}/">{{org.name}}</a></td>
-                <td>{{org.date_of_foundation}}</td>
-                <td>{{org.director_id}}</td>
-                <td>{{org.description}}</td>
+                <td width="20%"><a href="/organizations/{{ org.id }}/">{{org.name}}</a></td>
+                <td width="30%">{{org.description}}</td>
+                <td width="10%">
+                    {%for contact in org.contacts %}
+                    {{contact}}
+                    {%endfor%}
+                </td>
+                <td width="20%">{{org.director_id}}</td>
+                <td width="10%">{{org.date_of_foundation}}</td>
             </tr>
             {%endfor%}
             </tbody>
         </table>
+    </div>
+</div>
 {%endblock%}
